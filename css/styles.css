@@ -4,6 +4,8 @@
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --secondary-text-color: #757575;
+  --primary-svg-color: #afb1b8;
+  --svg-accent-color: #2196f3;
   --card-set-gap: 30px;
 }
 
@@ -113,23 +115,46 @@ button {
   margin-right: 50px;
 }
 
-.contacts {
+.contacts-mail,
+.contacts-phone {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--secondary-text-color);
+  display: flex;
+  align-items: center;
 }
 
-.contacts:hover,
-.contacts:focus {
+.contacts-mail:hover,
+.contacts-mail:focus,
+.contacts-phone:hover,
+.contacts-phone:focus {
   color: var(--accent-color);
 }
 
 .contacts.list {
   display: flex;
 }
+
+.mail-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.phone-icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+.contacts-mail:hover .mail-icon {
+  fill: var(--accent-color);
+}
+
+/* .contacts:hover .header-icon {
+  fill: var(--svg-accent-color);
+} */
 
 .header-contacts {
   margin-left: auto;
@@ -214,6 +239,19 @@ button {
   color: var(--secondary-text-color);
 }
 
+.thumb-feature {
+  height: 120px;
+  width: 270px;
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.thumb-feature .feature-svg {
+  display: inline-block;
+  margin: 25px 102px;
+}
+
 .feature-section,
 .abilities {
   background-color: var(--primary-white-color);
@@ -286,7 +324,8 @@ button {
 }
 
 .team-content {
-  padding: 30px 0;
+  padding-top: 30px;
+  padding-bottom: 16px;
 }
 
 .title-team {
@@ -320,6 +359,45 @@ button {
   margin-left: var(--card-set-gap);
 }
 
+.team-social {
+  padding: 16px 32px 30px 32px;
+}
+
+.team-social-flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.team-social-link {
+  height: 44px;
+  width: 44px;
+  flex-basis: calc(100% / 4 - 10px);
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.team-social-icon {
+  fill: var(--primary-svg-color);
+  display: block;
+}
+
+.team-social-link:hover {
+  background-color: var(--svg-accent-color);
+}
+
+.team-social-link:hover .team-social-icon {
+  fill: var(--primary-white-color);
+}
+
 .title-clients {
   font-weight: 700;
   font-size: 36px;
@@ -332,9 +410,12 @@ button {
 
 .clients-flex {
   display: flex;
-  flex-wrap: wrap;
   margin-top: -30px;
   margin-left: -30px;
+}
+
+.clients-link {
+  cursor: pointer;
 }
 
 .clients-list {
@@ -343,12 +424,28 @@ button {
   margin-left: var(--card-set-gap);
   width: 170px;
   height: 92px;
-  padding: 16px 32px;
+  display: flex;
   justify-content: center;
+  align-items: center;
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
   background-color: var(--primary-white-color);
+}
+
+.clients-icon {
+  display: block;
+  fill: var(--primary-svg-color);
+  margin: 16px 32px;
+}
+
+.clients-list:hover {
+  border: 1px solid var(--svg-accent-color);
+  fill: var(--svg-accent-color);
+}
+
+.clients-list:hover .clients-icon {
+  fill: var(--svg-accent-color);
 }
 
 .logo-footer {
@@ -398,6 +495,7 @@ button {
 
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer-left {
@@ -415,6 +513,37 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-white-color);
+  margin-bottom: 20px;
+}
+
+.footer-right-flex {
+  display: flex;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50px;
+}
+
+.footer-social-link {
+  height: 44px;
+  width: 44px;
+  flex-basis: calc(100% / 4 - 10px);
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.footer-social-icon {
+  fill: var(--primary-white-color);
+  display: block;
+}
+
+.footer-social-link:hover {
+  background-color: var(--svg-accent-color);
 }
 
 /* PORTFOLIO */
@@ -494,4 +623,10 @@ button {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
   border-top: none;
+}
+
+.project-items:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
 }
