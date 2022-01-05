@@ -245,11 +245,9 @@ button {
   background-color: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
-}
-
-.thumb-feature .feature-svg {
-  display: inline-block;
-  margin: 25px 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .feature-section,
@@ -390,11 +388,14 @@ button {
   display: block;
 }
 
-.team-social-link:hover {
+.team-social-link:hover,
+.team-social-link:focus {
   background-color: var(--svg-accent-color);
+  outline: none;
 }
 
-.team-social-link:hover .team-social-icon {
+.team-social-link:hover .team-social-icon,
+.team-social-link:focus .team-social-icon {
   fill: var(--primary-white-color);
 }
 
@@ -433,19 +434,34 @@ button {
   background-color: var(--primary-white-color);
 }
 
+.clients-link {
+  width: 170px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: var(--primary-white-color);
+}
+
 .clients-icon {
   display: block;
   fill: var(--primary-svg-color);
   margin: 16px 32px;
 }
 
-.clients-list:hover {
-  border: 1px solid var(--svg-accent-color);
-  fill: var(--svg-accent-color);
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--svg-accent-color);
+  outline: none;
 }
 
-.clients-list:hover .clients-icon {
+.clients-list a:hover svg,
+.clients-list a:focus svg {
   fill: var(--svg-accent-color);
+  color: var(--svg-accent-color);
 }
 
 .logo-footer {
@@ -542,8 +558,10 @@ button {
   display: block;
 }
 
-.footer-social-link:hover {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: var(--svg-accent-color);
+  outline: none;
 }
 
 /* PORTFOLIO */
